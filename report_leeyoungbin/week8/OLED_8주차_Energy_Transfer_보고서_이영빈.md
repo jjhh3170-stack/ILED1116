@@ -3,7 +3,7 @@
 **작성자:** 이영빈 **학번:** 2023101942
 
 > Donor: **CBP** (5 × 10<sup>−4</sup> M 고정) / Acceptor: **Rubrene** (0, 3, 5, 7 × 10<sup>−5</sup> M) / 용매: **1,2-dichlorobenzene**<br>
-> 측정: 적분구 PL 및 PLQY (JASCO FP-8300, ILF-835 적분구, λ<sub>ex</sub> = 330 nm, 300–780 nm, 0.5 nm 간격)
+> 측정: UV-Vis 흡수, PL, 적분구 PL 및 PLQY (JASCO FP-8300, ILF-835 적분구, λ<sub>ex</sub> = 330 nm)
 
 ---
 
@@ -135,24 +135,38 @@ R은 기체상수, T는 절대온도, η는 용매의 점도이다. 충돌이 �
 
 ### 2. Donor, acceptor의 UV & PL 스펙트럼을 측정하여 spectral overlap을 확인하고 acceptor의 비율에 따라 변화된 PL 스펙트럼을 통해 energy transfer를 확인하시오.
 
-**Spectral overlap.** CBP(donor)의 PL은 Sample 1 스펙트럼을, Rubrene(acceptor)의 PL은 Sample 4에서 Sample 1을 뺀 차이 스펙트럼을 사용하였다. Rubrene의 흡수는 문헌의 용액 흡수 스펙트럼 분석값(Kytka et al., 2009: S<sub>0</sub> → S<sub>1</sub> 0–0 전이 2.359 eV, 진동 에너지 0.165 eV, Huang-Rhys 인자 0.986)으로 진동 progression의 위치와 상대 세기를 계산해 막대로 표시하였다.
+UV와 PL은 조교가 제공한 측정 데이터(`cbp. rubrene abs pl.csv`)를 사용하였다. 이 파일에는 CBP·Rubrene 각각의 흡수 및 PL 스펙트럼과 Sample 2–4의 일반 PL 스펙트럼이 들어 있다(300–780 nm, 1 nm 간격).
 
-> λ<sub>n</sub> = 1239.84 / (2.359 + n × 0.165) eV → 526, 491, 461, 434 nm (n = 0, 1, 2, 3)<br>
-> 상대 세기 ∝ e<sup>−S</sup> S<sup>n</sup> / n! → 0.37, 0.37, 0.18, 0.06
+**흡수 스펙트럼과 여기 파장.**
 
-**Fig. 1 — CBP PL, Rubrene PL, Rubrene S<sub>0</sub> → S<sub>1</sub> 흡수 진동 progression(문헌값 기반)**
+**Fig. 1 — CBP와 Rubrene의 흡수 스펙트럼: (a) 전체 구간, (b) Rubrene S<sub>0</sub> → S<sub>1</sub> 흡수대 확대**
+
+![abs](figures/fig_abs.png)
+
+CBP는 325 nm에서 최대 흡수(2.76)를 보이고 340 nm 이후 급격히 줄어 370 nm 이상에서는 거의 흡수하지 않는다. Rubrene은 465 nm(shoulder), 495 nm, 529 nm에 S<sub>0</sub> → S<sub>1</sub> 전이의 진동 구조를 보이고, 305 nm 부근에 더 높은 들뜬상태로의 강한 흡수가 있다. 장파장 쪽 흡수 가장자리에 접선을 그어 구한 onset으로 각 물질의 에너지를 비교하였다.
+
+> CBP: λ<sub>onset</sub> = 353.7 nm → E = 1240 / 353.7 = 3.51 eV<br>
+> Rubrene: λ<sub>onset</sub> = 557.9 nm → E = 1240 / 557.9 = 2.22 eV
+
+CBP의 에너지가 Rubrene보다 1.29 eV 높으므로 CBP → Rubrene 방향의 에너지 전달이 에너지적으로 가능하다. 여기 파장 330 nm에서 측정 용액의 흡광도는 CBP 2.68, Rubrene 0.43으로 CBP가 약 6.2배 크다. 시료 안에서는 CBP 농도(5 × 10<sup>−4</sup> M)가 Rubrene(최대 7 × 10<sup>−5</sup> M)보다 7배 이상 높으므로, 330 nm 빛은 대부분 CBP가 흡수한다. 다만 Rubrene의 흡광도가 0이 아니므로 Rubrene도 일부 직접 여기된다. 이 점은 문항 4에서 다시 다룬다.
+
+**Spectral overlap.**
+
+**Fig. 2 — CBP PL, Rubrene 흡수, Rubrene PL의 정규화 스펙트럼 (보라색: CBP PL과 Rubrene 흡수의 겹침)**
 
 ![overlap](figures/fig_overlap.png)
 
-CBP의 PL은 372 nm에서 최대이고 384 nm 부근에 진동 shoulder를 보이며 450 nm 부근까지 꼬리가 이어진다. Rubrene의 S<sub>0</sub> → S<sub>1</sub> 흡수대는 434–526 nm에 있으므로, CBP 발광의 장파장 꼬리가 Rubrene 흡수대의 단파장 쪽(434, 461 nm 성분)과 겹친다. 정규화한 CBP PL 세기는 434 nm에서 0.12, 461 nm에서 0.03이고, 434 nm 이후 영역은 CBP 전체 발광 면적의 약 4.7 %이다. 따라서 겹침은 존재하지만 크지 않다. 반면 Rubrene의 발광(약 565 nm 최대)은 CBP 발광과 거의 겹치지 않으므로, 두 발광을 파장으로 분리해 donor의 변화만 볼 수 있다. 또한 CBP 발광 최대의 에너지(1240/372 nm = 3.33 eV)가 Rubrene의 S<sub>1</sub>(2.36 eV)보다 높아 CBP → Rubrene 방향의 전달이 에너지적으로 가능하다.
+CBP의 PL은 376 nm에서 최대이고 약 350–474 nm(최대값의 1 % 이상)에 걸쳐 있다. Rubrene의 PL은 559 nm에서 최대이고 515 nm부터 나타나므로, 두 물질의 발광은 파장으로 분리된다. Rubrene 흡수는 S<sub>0</sub> → S<sub>1</sub> 흡수대의 최대값(529 nm)으로 정규화하였다.
 
-**Acceptor 농도에 따른 PL 변화.**
+두 스펙트럼의 겹침은 두 구간에서 나타난다. 첫째, 340–420 nm에서는 CBP 발광의 주 영역이 Rubrene의 높은 들뜬상태 흡수(305 nm 흡수대의 장파장 꼬리)와 겹친다. 둘째, 420–480 nm에서는 CBP 발광의 장파장 꼬리가 Rubrene S<sub>0</sub> → S<sub>1</sub> 흡수대의 단파장 쪽(465 nm shoulder)과 겹친다. 정규화한 두 곡선 중 작은 값을 적분한 겹침 면적은 CBP PL 면적의 42.8 %이고, 그중 34.3 %가 340–420 nm, 8.5 %가 420–500 nm에서 나온다. Overlap integral J = ∫ I<sub>D</sub> ε<sub>A</sub> λ<sup>4</sup> dλ를 정규화 스펙트럼으로 계산하면 340–420 nm가 전체의 84 %, 420–480 nm가 13 %를 차지한다. 따라서 CBP → Rubrene 에너지 전달은 주로 Rubrene의 높은 singlet 상태로 일어나고, Rubrene 안에서 빠른 내부전환으로 S<sub>1</sub>까지 내려온 뒤 559 nm에서 발광하는 경로로 해석할 수 있다. 측정 용액의 Rubrene 농도가 파일에 없어 ε의 절대값을 구할 수 없으므로 J는 상대값으로만 비교하였다.
 
-**Fig. 2 — Rubrene 농도에 따른 PL 스펙트럼: (a) donor(CBP) 영역, (b) acceptor(Rubrene) 영역 ((b)는 9점 이동평균)**
+**Acceptor 농도에 따른 PL 변화 (적분구 측정, Sample 1–4).**
+
+**Fig. 3 — 적분구에서 측정한 Rubrene 농도별 PL: (a) donor(CBP) 영역, (b) acceptor(Rubrene) 영역 ((b)는 9점 이동평균)**
 
 ![PL](figures/fig_pl.png)
 
-**Table 2 — 시료별 PL 특성 (λ<sub>ex</sub> = 330 nm)**
+**Table 2 — 적분구 측정 시료별 PL 특성 (λ<sub>ex</sub> = 330 nm)**
 
 | 시료 | [Rubrene] | CBP 최대 파장 | CBP 최대 세기 | CBP 영역 면적 (340–500 nm) | Rubrene 영역 면적 (520–700 nm) |
 |------|------|------|------|------|------|
@@ -161,15 +175,31 @@ CBP의 PL은 372 nm에서 최대이고 384 nm 부근에 진동 shoulder를 보�
 | Sample 3 | 5 × 10<sup>−5</sup> M | 371.0 nm | 89.3 | 4441 | 29.3 |
 | Sample 4 | 7 × 10<sup>−5</sup> M | 372.0 nm | 83.0 | 4208 | 32.6 |
 
-Rubrene 농도가 0에서 7 × 10<sup>−5</sup> M로 늘수록 CBP 발광의 최대 세기는 102.9에서 83.0으로 19 % 줄고, 면적은 4904에서 4208로 14 % 줄었다. 최대 파장과 스펙트럼 모양은 그대로이므로 CBP의 발광 상태 자체는 바뀌지 않았고 발광 세기만 줄었다. 같은 시료에서 550–600 nm의 Rubrene 발광이 새로 나타나 농도와 함께 커졌다(Rubrene 영역 면적 14.4 → 32.6). Sample 1의 이 영역 값은 CBP 발광 꼬리와 잡음에 해당한다.
+Rubrene 농도가 0에서 7 × 10<sup>−5</sup> M로 늘수록 CBP 발광의 최대 세기는 102.9에서 83.0으로 19 % 줄고, 면적은 4904에서 4208로 14 % 줄었다. 같은 시료에서 550–600 nm의 Rubrene 발광이 새로 나타나 농도와 함께 커졌다(면적 14.4 → 32.6). Sample 1의 이 영역 값은 CBP 발광 꼬리와 잡음에 해당한다.
 
-여기 파장 330 nm에서는 주로 CBP가 빛을 흡수한다. 따라서 CBP 발광이 줄어드는 만큼 Rubrene 발광이 늘어나는 것은 CBP의 들뜬 에너지가 Rubrene으로 넘어가 Rubrene이 발광한 결과로 해석할 수 있고, 이는 CBP → Rubrene energy transfer가 일어났음을 보여준다. 다만 Rubrene 발광의 증가분(약 18)은 CBP 발광의 감소분(약 696)보다 훨씬 작다. 이는 CBP에서 사라진 에너지가 모두 Rubrene 발광으로 나오지는 않았다는 뜻이며, 문항 4에서 다시 다룬다.
+**Acceptor 농도에 따른 PL 변화 (일반 PL 측정, Sample 2–4).**
+
+**Fig. 4 — 일반 PL 장비로 측정한 Sample 2–4의 PL: (a) donor(CBP) 영역, (b) acceptor(Rubrene) 영역**
+
+![PL normal](figures/fig_pl_normal.png)
+
+**Table 3 — 일반 PL 측정 시료별 특성**
+
+| 시료 | [Rubrene] | CBP 최대 파장 | CBP 최대 세기 | CBP 영역 면적 (340–500 nm) | Rubrene 영역 면적 (520–700 nm) |
+|------|------|------|------|------|------|
+| Sample 2 | 3 × 10<sup>−5</sup> M | 380 nm | 1010 | 49325 | 534 |
+| Sample 3 | 5 × 10<sup>−5</sup> M | 381 nm | 845 | 42342 | 636 |
+| Sample 4 | 7 × 10<sup>−5</sup> M | 383 nm | 769 | 39408 | 711 |
+
+일반 PL에서도 같은 경향이 뚜렷하다. Sample 2에서 4로 갈수록 CBP 발광 면적은 20 % 줄고(49325 → 39408), Rubrene 발광 면적은 33 % 늘었다(534 → 711). 혼합 시료의 장파장 발광은 세 시료 모두 558 nm에서 최대이고(최대 세기 8.05, 9.54, 10.67), 그 위치와 모양은 Rubrene 단독 PL(559 nm)과 일치하므로, 이 발광은 Rubrene에서 나온 것이다. 이 측정에는 CBP 단독(Sample 1) 데이터가 없어 Stern-Volmer 계산에는 쓰지 않고 경향 확인에만 사용하였다.
+
+330 nm 빛은 대부분 CBP가 흡수하므로, CBP 발광이 줄어드는 만큼 Rubrene 발광이 늘어나는 것은 CBP의 들뜬 에너지가 Rubrene으로 넘어가 Rubrene이 발광한 결과로 해석할 수 있다. 두 측정 모두 Rubrene 농도에 따라 CBP 발광 감소와 Rubrene 발광 증가가 함께 나타나므로, CBP → Rubrene energy transfer가 일어났음을 확인할 수 있다. 다만 일반 PL에서 CBP 최대 파장이 380 → 383 nm로 조금씩 장파장 이동하였다. Rubrene의 흡수는 350–415 nm에서 단파장일수록 크므로(Fig. 1(a)), CBP 발광의 단파장 쪽이 Rubrene에 더 많이 재흡수되면 최대 파장이 장파장 쪽으로 밀려 보인다. 이는 분자 간 에너지 전달 외에 재흡수도 함께 일어났다는 증거이며 문항 4에서 다룬다.
 
 ### 3. Stern-Volmer equation에 따라 acceptor의 PL 영역과 겹치지 않는 donor의 PL 영역을 적분 구간으로 설정하여 donor만 있을 때의 PLQY와 donor에 acceptor의 비율에 따라 변화된 PLQY 값을 확인하여 Φ<sub>0</sub>/Φ<sub>A</sub>를 구한 뒤 이를 이용하여 Energy transfer rate를 추론하시오. (단, 형광의 lifetime은 10 ns로 가정한다.)
 
-**적분 구간.** Rubrene 발광은 약 520 nm부터 시작하므로, Rubrene 발광과 겹치지 않도록 산란 peak(330 nm) 이후부터 500 nm까지를 donor 적분 구간으로 사용하였다(Quantum Yield Analysis Tool에서 설정한 구간도 약 340–500 nm).
+**적분 구간.** Rubrene 단독 PL이 515 nm부터 나타나고 CBP 단독 PL은 474 nm 이후 최대값의 1 % 미만이므로, Rubrene 발광과 겹치지 않도록 산란 peak(330 nm) 이후부터 500 nm까지를 donor 적분 구간으로 사용하였다(Quantum Yield Analysis Tool에서 설정한 구간도 약 340–500 nm).
 
-**Fig. 3 — 적분구에서 측정한 blank와 Sample 1–4의 스펙트럼 (로그 축, 녹색: donor 적분 구간)**
+**Fig. 5 — 적분구에서 측정한 blank와 Sample 1–4의 스펙트럼 (로그 축, 녹색: donor 적분 구간)**
 
 ![sphere](figures/fig_sphere.png)
 
@@ -180,7 +210,7 @@ Rubrene 농도가 0에서 7 × 10<sup>−5</sup> M로 늘수록 CBP 발광의 �
 > &emsp;Sample 3: 79.617 / 71.274 = 1.117<br>
 > &emsp;Sample 4: 79.617 / 67.651 = 1.177
 
-**Table 3 — 시료별 PLQY와 Φ<sub>0</sub>/Φ<sub>A</sub>**
+**Table 4 — 시료별 PLQY와 Φ<sub>0</sub>/Φ<sub>A</sub>**
 
 | 시료 | [A] (M) | 흡수율 (%) | PLQY Φ (%) | Φ<sub>0</sub>/Φ<sub>A</sub> |
 |------|------|------|------|------|
@@ -189,7 +219,7 @@ Rubrene 농도가 0에서 7 × 10<sup>−5</sup> M로 늘수록 CBP 발광의 �
 | Sample 3 | 5 × 10<sup>−5</sup> | 88.036 | 71.274 | 1.117 |
 | Sample 4 | 7 × 10<sup>−5</sup> | 87.892 | 67.651 | 1.177 |
 
-**Fig. 4 — Stern-Volmer plot (■: PLQY 비, ○: PL 면적 비 검산)**
+**Fig. 6 — Stern-Volmer plot (■: PLQY 비, ○: PL 면적 비 검산)**
 
 ![SV](figures/fig_sv.png)
 
@@ -211,7 +241,7 @@ Rubrene 농도가 0에서 7 × 10<sup>−5</sup> M로 늘수록 CBP 발광의 �
 > k<sub>diff</sub> = 8RT / (3η) = (8 × 8.314 J mol<sup>−1</sup> K<sup>−1</sup> × 298.15 K) / (3 × 1.32 × 10<sup>−3</sup> Pa·s)<br>
 > &emsp;&emsp;= 5.01 × 10<sup>6</sup> m<sup>3</sup> mol<sup>−1</sup> s<sup>−1</sup> = **5.01 × 10<sup>9</sup> M<sup>−1</sup> s<sup>−1</sup>**  (1 m<sup>3</sup> = 10<sup>3</sup> L)
 
-**Table 4 — Energy transfer rate와 확산속도상수 비교**
+**Table 5 — Energy transfer rate와 확산속도상수 비교**
 
 | 항목 | 값 (M<sup>−1</sup> s<sup>−1</sup>) | 비고 |
 |------|------|------|
@@ -220,17 +250,17 @@ Rubrene 농도가 0에서 7 × 10<sup>−5</sup> M로 늘수록 CBP 발광의 �
 | k<sub>diff</sub> (1,2-dichlorobenzene, 25 °C) | 5.01 × 10<sup>9</sup> | η = 1.32 cP 문헌값으로 계산 |
 | k<sub>2</sub> / k<sub>diff</sub> | 49.5 | 오차율 4846 % |
 
-**분석.** 실험으로 구한 k<sub>2</sub>는 k<sub>diff</sub>보다 약 50배 크다. 두 분자가 확산으로 만나 충돌해야 하는 과정은 k<sub>diff</sub>보다 빠를 수 없으므로, 충돌이 필요한 Dexter 전달만으로는 이 값을 설명할 수 없다. 따라서 CBP → Rubrene 전달에는 분자가 만나기 전 먼 거리에서 작용하는 FRET가 기여했다고 볼 수 있다. CBP와 Rubrene은 모두 singlet 들뜬상태 사이의 전달이고, 문항 2에서 CBP 발광과 Rubrene S<sub>0</sub> → S<sub>1</sub> 흡수대의 겹침을 확인했으므로 FRET 조건을 만족한다. FRET가 작용하면 donor가 acceptor와 접촉하기 전에 에너지를 넘길 수 있어, 겉보기 속도상수가 확산 한계를 넘을 수 있다.
+**분석.** 실험으로 구한 k<sub>2</sub>는 k<sub>diff</sub>보다 약 50배 크다. 두 분자가 확산으로 만나 충돌해야 하는 과정은 k<sub>diff</sub>보다 빠를 수 없으므로, 충돌이 필요한 Dexter 전달만으로는 이 값을 설명할 수 없다. 따라서 CBP → Rubrene 전달에는 분자가 만나기 전 먼 거리에서 작용하는 FRET가 기여했다고 볼 수 있다. CBP와 Rubrene은 모두 singlet 들뜬상태 사이의 전달이고, 문항 2에서 CBP 발광과 Rubrene 흡수의 겹침(정규화 면적 기준 CBP PL의 42.8 %)을 확인했으므로 FRET 조건을 만족한다. FRET가 작용하면 donor가 acceptor와 접촉하기 전에 에너지를 넘길 수 있어, 겉보기 속도상수가 확산 한계를 넘을 수 있다.
 
-그러나 FRET만으로 50배 차이를 모두 설명하기는 어렵다. Rubrene 농도로 계산한 acceptor 사이 평균 반거리는 3, 5, 7 × 10<sup>−5</sup> M에서 각각 23.6, 19.9, 17.8 nm로 FRET 거리(1–10 nm)보다 길고, 문항 2에서 본 것처럼 스펙트럼 겹침도 CBP 발광 면적의 수 % 수준으로 작다. 겉보기 k<sub>2</sub>를 키운 다른 요인은 다음과 같다.
+그러나 FRET만으로 50배 차이를 모두 설명하기는 어렵다. Rubrene 농도로 계산한 acceptor 사이 평균 반거리는 3, 5, 7 × 10<sup>−5</sup> M에서 각각 23.6, 19.9, 17.8 nm로 FRET 거리(1–10 nm)보다 길다. 즉 대부분의 CBP 분자 주변 10 nm 안에는 Rubrene이 없다. 겉보기 k<sub>2</sub>를 키운 다른 요인은 다음과 같다.
 
 - **형광 수명 가정.** k<sub>2</sub> = K<sub>SV</sub>/τ이므로 k<sub>2</sub>는 τ에 반비례한다. τ = 10 ns는 가정값이며, CBP의 실제 수명이 이와 다르면 k<sub>2</sub>도 같은 비율로 달라진다. 다만 k<sub>2</sub>가 k<sub>diff</sub>와 같아지려면 τ가 약 500 ns여야 하는데, 이는 singlet 형광 수명으로 보기 어려워 τ만으로는 차이를 설명할 수 없다.
-- **Rubrene의 여기광 직접 흡수(경쟁 흡수).** Rubrene을 넣은 Sample 2의 흡수율(88.178 %)이 Sample 1(87.027 %)보다 높다. Rubrene이 직접 흡수한 330 nm 광자는 CBP 발광을 만들지 않지만, PLQY 계산에서는 흡수한 광자 수에 포함되므로 donor 영역 PLQY가 낮게 계산된다. 흡수율로 보정하지 않은 면적 비의 k<sub>2</sub>(2.32 × 10<sup>11</sup>)가 PLQY 기준 값보다 작은 것이 이 영향을 보여준다. 또 Rubrene이 직접 들떠서 낸 발광이 Fig. 2(b)의 Rubrene 발광에 일부 섞였을 수 있다.
-- **재흡수(radiative transfer).** CBP가 낸 430–500 nm 빛 일부를 Rubrene이 다시 흡수하고 donor 적분 구간 밖(약 565 nm)에서 내보낼 수 있다. 적분구에서는 빛이 벽에서 여러 번 반사되어 시료를 다시 지나므로 이 효과가 커진다. 이는 분자 간 에너지 전달이 아니지만 donor PLQY를 낮추어 k<sub>2</sub>를 크게 만든다.
+- **Rubrene의 여기광 직접 흡수(경쟁 흡수).** Fig. 1(a)에서 Rubrene은 330 nm에서 흡광도 0.43을 보이며, 이는 Rubrene 자신의 S<sub>0</sub> → S<sub>1</sub> 최대 흡광도(529 nm, 0.22)의 1.9배이다. 실제로 Rubrene을 넣은 Sample 2의 흡수율(88.178 %)이 Sample 1(87.027 %)보다 높다. Rubrene이 직접 흡수한 330 nm 광자는 CBP 발광을 만들지 않지만 PLQY 계산에서는 흡수한 광자 수에 포함되므로, donor 영역 PLQY가 낮게 계산되어 k<sub>2</sub>가 커진다. 또 Rubrene이 직접 들떠서 낸 발광이 Fig. 3(b), 4(b)의 Rubrene 발광에 일부 섞였을 수 있다. 매뉴얼은 host만 흡수하고 dopant는 흡수하지 않는 파장을 여기 파장으로 고르도록 하지만, 측정한 흡수 스펙트럼에서는 Rubrene 흡수가 0인 330 nm 이하 파장이 없다. Rubrene/CBP 흡광도 비는 330 nm에서 0.16이고 339 nm에서 최소(0.12)이다. 340 nm 부근은 CBP 발광이 시작되는 파장(약 345 nm)과 가까워 산란광과 발광을 분리하기 어려우므로, 330 nm는 Rubrene 흡수를 작게 하면서 donor 적분 구간을 확보한 절충이다.
+- **재흡수(radiative transfer).** Rubrene은 CBP 발광 영역(350–480 nm)에서도 흡수하므로(Fig. 2), CBP가 낸 빛 일부를 Rubrene이 다시 흡수하고 donor 적분 구간 밖(약 559 nm)에서 내보낼 수 있다. 일반 PL에서 CBP 최대 파장이 380 → 383 nm로 이동한 것이 이 효과를 보여준다. 또 Sample 2 대비 Sample 4의 CBP 면적 감소는 일반 PL에서 20 %(면적 비 1.252)이지만, PLQY에서는 8.4 %(73.841 → 67.651, 비 1.092)이다. 일반 PL과 적분구는 광경로와 검출 방식이 달라 재흡수의 영향이 다르게 나타나며, 측정 방식에 따라 소광 정도가 달라진다는 것은 측정값에 분자 간 전달이 아닌 광학적 효과가 섞여 있다는 뜻이다. 적분구에서도 빛이 벽에서 여러 번 반사되어 시료를 다시 지나므로 재흡수가 완전히 없어지지는 않는다. 이 효과는 분자 간 에너지 전달이 아니지만 donor PLQY를 낮추어 k<sub>2</sub>를 크게 만든다.
 - **에너지 손실 경로.** CBP 발광 감소분(면적 약 696)에 비해 Rubrene 발광 증가분(약 18)이 매우 작다. 측정 감도의 파장 의존성을 고려해도, CBP에서 사라진 에너지 중 상당 부분이 Rubrene 발광으로 나오지 않았다. 용존 산소에 의한 소광이나 Rubrene의 광산화처럼 donor 또는 acceptor의 비발광 소멸이 함께 일어났다면, 이 역시 donor 발광 감소로 측정되어 k<sub>2</sub>에 포함된다.
 - **농도 오차.** 각 시료는 0.75–1.75 mL를 마이크로 피펫으로 섞어 만들었다. Φ<sub>0</sub>/Φ<sub>A</sub> − 1이 0.08–0.18로 작아서 농도나 PLQY의 작은 오차도 기울기에 크게 반영된다. 시료별 k<sub>2</sub>가 2.34–2.61 × 10<sup>11</sup>로 흩어진 것도 이 영향이다.
 
-정리하면, 구한 k<sub>2</sub>가 용매의 확산속도상수보다 크다는 결과는 CBP → Rubrene 에너지 전달이 확산·충돌에 의존하는 Dexter 방식보다 먼 거리에서 작용하는 FRET 쪽에 가깝다는 것을 보여준다. 다만 2.48 × 10<sup>11</sup> M<sup>−1</sup> s<sup>−1</sup>에는 경쟁 흡수, 재흡수, 비발광 소멸, 가정한 수명의 영향이 함께 들어 있으므로, 순수한 분자 간 energy transfer rate의 상한으로 보는 것이 적절하다. 더 정확한 값을 얻으려면 TRPL로 CBP의 실제 τ를 측정하고, Rubrene 단독 용액을 같은 조건에서 측정해 직접 여기의 기여를 빼야 한다.
+정리하면, 구한 k<sub>2</sub>가 용매의 확산속도상수보다 크다는 결과는 CBP → Rubrene 에너지 전달이 확산·충돌에 의존하는 Dexter 방식보다 먼 거리에서 작용하는 FRET 쪽에 가깝다는 것을 보여준다. 다만 2.48 × 10<sup>11</sup> M<sup>−1</sup> s<sup>−1</sup>에는 경쟁 흡수, 재흡수, 비발광 소멸, 가정한 수명의 영향이 함께 들어 있으므로, 순수한 분자 간 energy transfer rate의 상한으로 보는 것이 적절하다. 더 정확한 값을 얻으려면 TRPL로 CBP의 실제 τ를 측정하고, 같은 농도의 Rubrene 단독 용액을 같은 조건에서 측정해 직접 여기와 재흡수의 기여를 빼야 한다.
 
 ---
 
@@ -238,13 +268,13 @@ Rubrene 농도가 0에서 7 × 10<sup>−5</sup> M로 늘수록 CBP 발광의 �
 
 1. Th. Förster, *Ann. Phys.* **437**, 55 (1948).
 2. D. L. Dexter, *J. Chem. Phys.* **21**, 836 (1953).
-3. M. Kytka, L. Gisslén, A. Gerlach, U. Heinemeyer, J. Kováč, R. Scholz, F. Schreiber, "Optical spectra obtained from amorphous films of rubrene: Evidence for predominance of twisted isomer," *J. Chem. Phys.* **130**, 214507 (2009). arXiv:0905.2689
-4. LSU Macromolecular Studies Group, "Viscosity of common solvents" (o-dichlorobenzene 1.32 cP, 25 °C). https://macro.lsu.edu/howto/solvents/viscosity.htm
+3. LSU Macromolecular Studies Group, "Viscosity of common solvents" (o-dichlorobenzene 1.32 cP, 25 °C). https://macro.lsu.edu/howto/solvents/viscosity.htm
 
 ### 부록 — 데이터 처리 요약
 
 - PL: `bare 1.csv`, `s1.csv`–`s4.csv` (JASCO, XYDATA 이후 값 사용). Sample 1 = CBP only, Sample 2–4 = Rubrene 3, 5, 7 × 10<sup>−5</sup> M, bare = 용매 blank.
 - PLQY: 장비 화면의 Int. Quantum Efficiency 값(79.617, 73.841, 71.274, 67.651 %)을 사용하였다. 같은 화면의 Quantum Efficiency 값은 이 값에 흡수율을 곱한 값이다(예: 79.617 × 0.87027 = 69.288).
-- 면적: 340–500 nm(donor), 520–700 nm(acceptor) 구간을 사다리꼴 적분하였다. Fig. 1의 Rubrene PL은 Sample 4 − Sample 1 차이 스펙트럼을 21점 이동평균하여 정규화하였다.
-- Rubrene 흡수: 측정 흡수 파일 대신 문헌 3의 용액 진동 progression 값으로 위치와 상대 세기를 계산하였다.
+- UV / PL: `cbp. rubrene abs pl.csv` (조교 제공). CBP·Rubrene 흡수, CBP·Rubrene 단독 PL, Sample 2–4 일반 PL을 사용하였다. 흡수 onset은 장파장 가장자리의 최대 기울기 지점(±3 nm)에서 선형회귀한 접선의 x절편으로 구하였다.
+- Spectral overlap: CBP PL은 최대값, Rubrene 흡수는 500–560 nm 최대값으로 정규화한 뒤, 두 곡선 중 작은 값을 적분해 겹침 면적을 구하였다. J는 정규화 스펙트럼으로 I<sub>D</sub> × A<sub>A</sub> × λ<sup>4</sup>을 적분한 상대값이다.
+- 면적: 340–500 nm(donor), 520–700 nm(acceptor) 구간을 사다리꼴 적분하였다.
 - 모든 그래프는 측정 raw data로부터 Python(numpy/matplotlib)으로 직접 작성하였다.
