@@ -46,12 +46,12 @@ Donor D와 acceptor A가 함께 있는 용액에서 일어나는 과정과 속�
 
 | 과정 | 반응 | 속도 |
 |------|------|------|
-| 흡수 | D + hν → D* | I<sub>a</sub> |
-| 발광 | D* → D + hν | k<sub>1</sub>[D*] |
-| 에너지 전달(quenching) | D* + A → D + A* | k<sub>2</sub>[D*][A] |
-| 비발광 소멸 | D* → D + heat | k<sub>3</sub>[D*] |
+| 흡수 | D + hν → D∗ | I<sub>a</sub> |
+| 발광 | D∗ → D + hν | k<sub>1</sub>[D∗] |
+| 에너지 전달(quenching) | D∗ + A → D + A∗ | k<sub>2</sub>[D∗][A] |
+| 비발광 소멸 | D∗ → D + heat | k<sub>3</sub>[D∗] |
 
-정상상태에서 donor의 발광 양자효율은 D*가 사라지는 전체 경로 중 발광 경로의 비율이다.
+정상상태에서 donor의 발광 양자효율은 D∗가 사라지는 전체 경로 중 발광 경로의 비율이다.
 
 > Φ<sub>0</sub> = k<sub>1</sub> / (k<sub>1</sub> + k<sub>3</sub>)  (acceptor 없음)<br>
 > Φ<sub>A</sub> = k<sub>1</sub> / (k<sub>1</sub> + k<sub>3</sub> + k<sub>2</sub>[A])  (acceptor 있음)
